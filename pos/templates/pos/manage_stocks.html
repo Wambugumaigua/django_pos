@@ -1,0 +1,235 @@
+{% extends 'pos/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page-header">
+    <div class="add-item d-flex">
+        <div class="page-title">
+            <h4 class="fw-bold">Manage Stocks</h4>
+            <h6>Warehouse and Store Inventory Overview</h6>
+        </div>
+        <div class="page-btn ms-auto">
+            <button type="button" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addStockModal">
+                + Add Stock
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table datanew">
+                <thead>
+                    <tr>
+                        <th>Warehouse</th>
+                        <th>Store</th>
+                        <th>Product</th>
+                        <th>Date</th>
+                        <th>Person</th>
+                        <th>Qty</th>
+                        <th class="text-end">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="stockTableBody">
+                    {% for stock in stocks %}
+                    <tr id="stockRow{{ stock.id }}">
+                        <td>{{ stock.warehouse }}</td>
+                        <td>{{ stock.store }}</td>
+                        <td>{{ stock.product }}</td>
+                        <td>{{ stock.date }}</td>
+                        <td>{{ stock.person }}</td>
+                        <td>{{ stock.qty }}</td>
+                        <td class="text-end">
+                            <a class="me-3 edit-btn" href="#" data-bs-toggle="modal" data-bs-target="#editStockModal{{ stock.id }}">
+                                <i class="fa fa-edit text-primary"></i>
+                            </a>
+                            <a class="delete-btn" href="#" data-bs-toggle="modal" data-bs-target="#deleteStockModal{{ stock.id }}">
+                                <i class="fa fa-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- Edit Modal -->
+                    <div class="modal fade" id="editStockModal{{ stock.id }}" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form class="edit-stock-form" data-id="{{ stock.id }}">
+                                    {% csrf_token %}
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Edit Stock</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Warehouse</label>
+                                            <input type="text" name="warehouse" value="{{ stock.warehouse }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Store</label>
+                                            <input type="text" name="store" value="{{ stock.store }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Product</label>
+                                            <input type="text" name="product" value="{{ stock.product }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Date</label>
+                                            <input type="date" name="date" value="{{ stock.date|date:'Y-m-d' }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Person</label>
+                                            <input type="text" name="person" value="{{ stock.person }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Qty</label>
+                                            <input type="number" name="qty" value="{{ stock.qty }}" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delete Modal -->
+                    <div class="modal fade" id="deleteStockModal{{ stock.id }}" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form class="delete-stock-form" data-id="{{ stock.id }}">
+                                    {% csrf_token %}
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Delete Stock</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete <b>{{ stock.product }}</b> from <b>{{ stock.store }}</b>?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addStockModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="addStockForm">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Stock</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Warehouse</label>
+                        <input type="text" name="warehouse" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Store</label>
+                        <input type="text" name="store" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Product</label>
+                        <input type="text" name="product" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Date</label>
+                        <input type="date" name="date" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Person</label>
+                        <input type="text" name="person" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Qty</label>
+                        <input type="number" name="qty" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Add Stock</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+
+    // Add Stock
+    $('#addStockForm').submit(function(e){
+        e.preventDefault();
+        let form = $(this);
+        $.ajax({
+            url: "{% url 'add_stock' %}",
+            method: "POST",
+            data: form.serialize(),
+            success: function(data){
+                if(data.success){
+                    location.reload();
+                } else {
+                    alert(data.error);
+                }
+            }
+        });
+    });
+
+    // Edit Stock
+    $('.edit-stock-form').submit(function(e){
+        e.preventDefault();
+        let form = $(this);
+        let stockId = form.data('id');
+        $.ajax({
+            url: `/pos/manage-stocks/edit/${stockId}/`,
+            method: "POST",
+            data: form.serialize(),
+            success: function(data){
+                if(data.success){
+                    location.reload();
+                } else {
+                    alert(data.error);
+                }
+            }
+        });
+    });
+
+    // Delete Stock
+    $('.delete-stock-form').submit(function(e){
+        e.preventDefault();
+        let form = $(this);
+        let stockId = form.data('id');
+        $.ajax({
+            url: `/pos/manage-stocks/delete/${stockId}/`,
+            method: "POST",
+            data: form.serialize(),
+            success: function(data){
+                if(data.success){
+                    $(`#stockRow${stockId}`).remove();
+                    $(`#deleteStockModal${stockId}`).modal('hide');
+                } else {
+                    alert(data.error);
+                }
+            }
+        });
+    });
+
+});
+</script>
+{% endblock %}

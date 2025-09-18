@@ -223,7 +223,8 @@
 									</a>
 								</div>
 								<div class="col-md-2">
-									<a href="users.html" class="link-item">
+									<a href="{% url 'users' %}" class="link-item">
+
 										<span class="link-icon">
 											<i class="ti ti-user"></i>
 										</span>
@@ -395,11 +396,11 @@
 									<p>Admin</p>
 								</div>
 							</div>
-							<a class="dropdown-item" href="profile.html"><i class="ti ti-user-circle me-2"></i>MyProfile</a>
-							<a class="dropdown-item" href="sales-report.html"><i class="ti ti-file-text me-2"></i>Reports</a>
-							<a class="dropdown-item" href="general-settings.html"><i class="ti ti-settings-2 me-2"></i>Settings</a>
+                            <a class="dropdown-item" href="profile.html"><i class="ti ti-user-circle me-2"></i>My Profile</a>
+                            <a class="dropdown-item" href="#"><i class="ti ti-file-text me-2"></i>Reports</a>
+                            <a class="dropdown-item" href="profile.html"><i class="ti ti-user-circle me-2"></i>My Profile</a>
 							<hr class="my-2">
-							<a class="dropdown-item logout pb-0" href="signin.html"><i class="ti ti-logout me-2"></i>Logout</a>
+							<a class="dropdown-item logout pb-0" href="signin"><i class="ti ti-logout me-2"></i>Logout</a>
 						</div>
 					</li>
 				</ul>
@@ -412,7 +413,7 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<a class="dropdown-item" href="profile.html">My Profile</a>
 						<a class="dropdown-item" href="general-settings.html">Settings</a>
-						<a class="dropdown-item" href="signin.html">Logout</a>
+						<a class="dropdown-item" href="signin">Logout</a>
 					</div>
 				</div>
 				<!-- /Mobile Menu -->
@@ -502,9 +503,10 @@
 								<li class="submenu">
 									<a href="javascript:void(0);" class="subdrop active"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="p.o.s-dashboard.html">P.O.S</a></li>
-										<li><a href="admin-dashboard.html">Admin Dashboard </a></li>
-										<li><a href="manager-dashboard.html">Manager Dashboard</a></li>
+										<li><a href="{% url 'index' %}">P.O.S</a></li>
+										<li><a href="{% url 'admin_dashboard' %}">Admin Dashboard</a></li>
+										<li><a href="{% url 'manager_dashboard' %}">Manager Dashboard</a></li>
+
 									</ul>
 								</li>
 								<li class="submenu">
@@ -572,120 +574,97 @@
                                 <li><a href="{% url 'units' %}"><span>Units</span></a></li>
 
 
-								<
-							</ul>
-						</li>
-						<li class="submenu-open">
-							<h6 class="submenu-hdr">Stock</h6>
-							<ul>
-								<li><a href="manage-stocks.html"><i class="ti ti-stack-3 fs-16 me-2"></i><span>Manage Stock</span></a></li>
-								<li><a href="stock-transfer.html"><i class="ti ti-stack-pop fs-16 me-2"></i><span>Stock Transfer</span></a></li>
-							</ul>
-						</li>
-						<li class="submenu-open">
-							<h6 class="submenu-hdr">Sales</h6>
-							<ul>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Sales</span><span class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="online-orders.html">Online Orders</a></li>
-										<li><a href="pos-orders.html">POS Orders</a></li>
-									</ul>
-								</li>
-								<li><a href="invoice.html"><i class="ti ti-file-invoice fs-16 me-2"></i><span>Invoices</span></a></li>
-								<li><a href="sales-returns.html"><i class="ti ti-receipt-refund fs-16 me-2"></i><span>Sales Return</span></a></li>
-								<li><a href="quotation-list.html"><i class="ti ti-files fs-16 me-2"></i><span>Quotation</span></a></li>
-								<li class="submenu">
-									
-									<ul>
-										
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="submenu-open">
-							
-							<ul>
-								<li class="submenu">
-									<ul>
-										<li><a href="discount-plan.html">Discount Plan</a></li>
-										<li><a href="discount.html">Discount</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						
-
-						<li class="submenu-open">
-							<h6 class="submenu-hdr">Reports</h6>
-							<ul>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-chart-bar fs-16 me-2"></i><span>Sales Report</span><span class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="sales-report.html">Sales Report</a></li>
-										<li><a href="best-seller.html">Best Seller</a></li>
-									</ul>
-								</li>
 								
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-triangle-inverted fs-16 me-2"></i><span>Inventory Report</span><span class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="inventory-report.html">Inventory Report</a></li>
-										<li><a href="stock-history.html">Stock History</a></li>
-										<li><a href="sold-stock.html">Sold Stock</a></li>
-									</ul>
-								</li>
-								<li><a href="invoice-report.html"><i class="ti ti-businessplan fs-16 me-2"></i><span>Invoice Report</span></a></li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-user-star fs-16 me-2"></i><span>Supplier Report</span><span class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="supplier-report.html">Supplier Report</a></li>
-										<li><a href="supplier-due-report.html">Supplier Due Report</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-report fs-16 me-2"></i><span>Customer Report</span><span class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="customer-report.html">Customer Report</a></li>
-										<li><a href="customer-due-report.html">Customer Due Report</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-report-analytics fs-16 me-2"></i><span>Product Report</span><span class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="product-report.html">Product Report</a></li>
-										<li><a href="product-expiry-report.html">Product Expiry Report</a></li>
-										<li><a href="product-quantity-alert.html">Product Quantity Alert</a></li>
-									</ul>
-								</li>
-								<li><a href="expense-report.html"><i class="ti ti-file-vector fs-16 me-2"></i><span>Expense Report</span></a></li>
-								<li><a href="income-report.html"><i class="ti ti-chart-ppf fs-16 me-2"></i><span>Income Report</span></a></li>
-								<li><a href="tax-reports.html"><i class="ti ti-chart-dots-2 fs-16 me-2"></i><span>Tax Report</span></a></li>
-								<li><a href="profit-and-loss.html"><i class="ti ti-chart-donut fs-16 me-2"></i><span>Profit & Loss</span></a></li>
-								<li><a href="annual-report.html"><i class="ti ti-report-search fs-16 me-2"></i><span>Annual Report</span></a></li>
 							</ul>
 						</li>
+						<li class="submenu-open">
+                            <h6 class="submenu-hdr">Stock</h6>
+                            <ul>
+                                <li><a href="{% url 'manage_stocks' %}"><i class="ti ti-stack-3 fs-16 me-2"></i><span>Manage Stock</span></a></li>
+
+                            </ul>
+                        </li>
+
+<li class="submenu-open">
+    <h6 class="submenu-hdr">Reports</h6>
+    <ul>
+        <li class="submenu">
+            <a href="javascript:void(0);"><i class="ti ti-chart-bar fs-16 me-2"></i><span>Sales Report</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a href="#">Sales Report</a></li>
+                <li><a href="#">Best Seller</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu">
+            <a href="javascript:void(0);"><i class="ti ti-triangle-inverted fs-16 me-2"></i><span>Inventory Report</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a href="#">Inventory Report</a></li>
+                <li><a href="#">Stock History</a></li>
+                <li><a href="#">Sold Stock</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#"><i class="ti ti-businessplan fs-16 me-2"></i><span>Invoice Report</span></a>
+        </li>
+
+        <li class="submenu">
+            <a href="javascript:void(0);"><i class="ti ti-user-star fs-16 me-2"></i><span>Supplier Report</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a href="#">Supplier Report</a></li>
+                <li><a href="#">Supplier Due Report</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu">
+            <a href="javascript:void(0);"><i class="ti ti-report fs-16 me-2"></i><span>Customer Report</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a href="#">Customer Report</a></li>
+                <li><a href="#">Customer Due Report</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu">
+            <a href="javascript:void(0);"><i class="ti ti-report-analytics fs-16 me-2"></i><span>Product Report</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a href="#">Product Report</a></li>
+                <li><a href="#">Product Expiry Report</a></li>
+                <li><a href="#">Product Quantity Alert</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#"><i class="ti ti-file-vector fs-16 me-2"></i><span>Expense Report</span></a></li>
+        <li><a href="#"><i class="ti ti-chart-ppf fs-16 me-2"></i><span>Income Report</span></a></li>
+        <li><a href="#"><i class="ti ti-chart-dots-2 fs-16 me-2"></i><span>Tax Report</span></a></li>
+        <li><a href="#"><i class="ti ti-chart-donut fs-16 me-2"></i><span>Profit & Loss</span></a></li>
+        <li><a href="#"><i class="ti ti-report-search fs-16 me-2"></i><span>Annual Report</span></a></li>
+    </ul>
+</li>
+
 						
 								
 								
 						<li class="submenu-open">
 							<h6 class="submenu-hdr">User Management</h6>
 							<ul>
-								<li><a href="users.html"><i class="ti ti-shield-up fs-16 me-2"></i><span>Users</span></a></li>
-								<li><a href="roles-permissions.html"><i class="ti ti-jump-rope fs-16 me-2"></i><span>Roles & Permissions</span></a></li>
-								<li><a href="delete-account.html"><i class="ti ti-trash-x fs-16 me-2"></i><span>Delete Account Request</span></a></li>
+								<a href="{% url 'users' %}"><i class="ti ti-shield-up fs-16 me-2"></i><span>Users</span></a>
+								<li><a href="{% url 'roles_permissions' %}"><i class="ti ti-jump-rope fs-16 me-2"></i><span>Roles & Permissions</span></a></li>
+								<li><a href="{% url 'delete_account' %}"><i class="ti ti-trash-x fs-16 me-2"></i><span>Delete Account Request</span></a></li>
 							</ul>
 						</li>
 						
 						<li class="submenu-open">
 							<h6 class="submenu-hdr">Settings</h6>
 							<ul>
-								<li class="submenu">
-									
-								</li>
+								
 								<li>
-									<a href="signin.html"><i class="ti ti-logout fs-16 me-2"></i><span>Logout</span> </a>
-								</li>
+                                    <a href="{% url 'signin' %}">
+                                    <i class="ti ti-logout fs-16 me-2"></i>
+                                    <span>Logout</span>
+                                    </a>
+                                </li>
+
 							</ul>
 						</li>
 						
@@ -859,20 +838,22 @@
 								<li class="submenu">
 									<a href="javascript:void(0);"><span>Sales Report</span><span class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="sales-report.html">Sales Report</a></li>
-										<li><a href="best-seller.html">Best Seller</a></li>
+                                        <li><a href="#">Sales Report</a></li>
+                                        <li><a href="#">Best Seller</a></li>
+
 									</ul>
 								</li>
 								
 								<li class="submenu">
 									<a href="javascript:void(0);"><span>Inventory Report</span><span class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="inventory-report.html">Inventory Report</a></li>
+										<li><a href="#">Inventory Report</a></li>
 										<li><a href="stock-history.html">Stock History</a></li>
 										<li><a href="sold-stock.html">Sold Stock</a></li>
 									</ul>
 								</li>
-								<li><a href="invoice-report.html"><span>Invoice Report</span></a></li>
+								<li><a href="#"><span>Invoice Report</span></a></li>
+
 								<li class="submenu">
 									<a href="javascript:void(0);"><span>Supplier Report</span><span class="menu-arrow"></span></a>
 									<ul>
@@ -890,17 +871,17 @@
 								<li class="submenu">
 									<a href="javascript:void(0);"><span>Product Report</span><span class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="product-report.html">Product Report</a></li>
-										<li><a href="product-expiry-report.html">Product Expiry Report</a></li>
-										<li><a href="product-quantity-alert.html">Product Quantity Alert</a></li>
-									</ul>
-								</li>
-								<li><a href="expense-report.html"><span>Expense Report</span></a></li>
-								<li><a href="income-report.html"><span>Income Report</span></a></li>
-								<li><a href="tax-reports.html"><span>Tax Report</span></a></li>
-								<li><a href="profit-and-loss.html"><span>Profit & Loss</span></a></li>
-								<li><a href="annual-report.html"><span>Annual Report</span></a></li>
-							</ul>
+                                        <li><a href="/pos/product-report/">Product Report</a></li>
+                                        <li><a href="/pos/product-expiry-report/">Product Expiry Report</a></li>
+                                        <li><a href="/pos/product-quantity-alert/">Product Quantity Alert</a></li>
+                                        <li><a href="/pos/expense-report/">Expense Report</a></li>
+                                        <li><a href="/pos/income-report/">Income Report</a></li>
+                                        <li><a href="/pos/tax-report/">Tax Report</a></li>
+                                        <li><a href="/pos/profit-loss-report/">Profit & Loss</a></li>
+                                        <li><a href="/pos/annual-report/">Annual Report</a></li>
+
+                                    </ul>
+
 						</li>
 						<li class="submenu">
 							<a href="javascript:void(0);"><i class="ti ti-settings fs-16 me-2"></i><span>Settings</span><span class="menu-arrow"></span></a>
@@ -924,7 +905,6 @@
 										<li><a href="preference.html">Preference</a></li>
 										<li><a href="appearance.html">Appearance</a></li>
 										<li><a href="social-authentication.html">Social Authentication</a></li>
-										<li><a href="language-settings.html">Language</a></li>
 									</ul>
 								</li>
 								<li class="submenu">
@@ -977,7 +957,8 @@
 									</ul>
 								</li>
 								<li>
-									<a href="signin.html"><span>Logout</span> </a>
+									<a href="{% url 'signin' %}"><span>Logout</span></a>
+
 								</li>
 							</ul>
 						</li>
@@ -998,9 +979,9 @@
 								<li class="submenu">
 									<a href="javascript:void(0);"><span>User Management</span><span class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="users.html"><span>Users</span></a></li>
-										<li><a href="roles-permissions.html"><span>Roles & Permissions</span></a></li>
-										<li><a href="delete-account.html"><span>Delete Account Request</span></a></li>
+										<li><a href="{% url 'users' %}"><span>Users</span></a></li>
+										<li><a href="{% url 'roles_permissions' %}"><span>Roles & Permissions</span></a></li>
+										<li><a href="{% url 'delete_account' %}"><span>Delete Account Request</span></a></li>
 									</ul>
 								</li>
 								<li class="submenu">
@@ -1110,12 +1091,7 @@
 						</div>
 						<div class="tab-content" id="v-pills-tabContent">
 							<div class="tab-pane fade show active" id="dashboard">
-								<ul>
-									<li class="menu-title"><span>MAIN</span></li>
-									<li><a href="index.html" class="active">Admin Dashboard</a></li>
-									<li><a href="admin-dashboard.html">Admin Dashboard 2</a></li>
-									<li><a href="sales-dashboard.html">Sales Dashboard</a></li>
-								</ul>
+								
 							</div>
 							<div class="tab-pane fade" id="super-admin">
 								<ul>
@@ -1264,30 +1240,37 @@
 									<li class="submenu">
 										<a href="javascript:void(0);"><span>Supplier Report</span><span class="menu-arrow"></span></a>
 										<ul>
-											<li><a href="supplier-report.html">Supplier Report</a></li>
-											<li><a href="supplier-due-report.html">Supplier Due Report</a></li>
+											<li><a href="/pos/supplier-report/">Supplier Report</a></li>
+                                            <li><a href="/pos/supplier-due-report/">Supplier Due Report</a></li>
+
+
 										</ul>
 									</li>
 									<li class="submenu">
 										<a href="javascript:void(0);"><span>Customer Report</span><span class="menu-arrow"></span></a>
 										<ul>
-											<li><a href="customer-report.html">Customer Report</a></li>
-											<li><a href="customer-due-report.html">Customer Due Report</a></li>
+											<li><a href="/pos/customer-report/">Customer Report</a></li>
+                                            <li><a href="/pos/customer-due-report/">Customer Due Report</a></li>
+
+
 										</ul>
 									</li>
 									<li class="submenu">
 										<a href="javascript:void(0);"><span>Product Report</span><span class="menu-arrow"></span></a>
 										<ul>
-											<li><a href="product-report.html">Product Report</a></li>
-											<li><a href="product-expiry-report.html">Product Expiry Report</a></li>
-											<li><a href="product-quantity-alert.html">Product Quantity Alert</a></li>
+											<li><a href="/pos/product-report/"><span>Product Report</span></a></li>
+                                            <li><a href="/pos/product-expiry-report/"><span>Product Expiry Report</span></a></li>
+                                            <li><a href="/pos/product-quantity-alert/"><span>Product Quantity Alert</span></a></li>
+
+
 										</ul>
 									</li>
-									<li><a href="expense-report.html"><span>Expense Report</span></a></li>
-									<li><a href="income-report.html"><span>Income Report</span></a></li>
-									<li><a href="tax-reports.html"><span>Tax Report</span></a></li>
-									<li><a href="profit-and-loss.html"><span>Profit & Loss</span></a></li>
-									<li><a href="annual-report.html"><span>Annual Report</span></a></li>
+									<li><a href="/pos/expense-report/"><span>Expense Report</span></a></li>
+                                    <li><a href="/pos/income-report/"><span>Income Report</span></a></li>
+                                    <li><a href="/pos/profit-loss-report/"><span>Profit & Loss</span></a></li>
+                                    <li><a href="/pos/annual-report/"><span>Annual Report</span></a></li>
+
+
 								</ul>
 							</div>
 							<div class="tab-pane fade" id="pages">
@@ -1318,9 +1301,10 @@
 									</li>
 									<li><a href="testimonials.html"><span>Testimonials</span></a></li>
 									<li><a href="faq.html"><span>FAQ</span></a></li>
-									<li><a href="users.html"><span>Users</span></a></li>
-									<li><a href="roles-permissions.html"><span>Roles & Permissions</span></a></li>
-									<li><a href="delete-account.html"><span>Delete Account Request</span></a></li>
+                                    <li><a href="{% url 'users' %}"><span>Users</span></a></li>
+									<li><a href="{% url 'roles_permissions' %}"><span>Roles & Permissions</span></a></li>
+									<li><a href="{% url 'delete_account' %}"><span>Delete Account Request</span></a></li>
+
 									
 									<li class="submenu">
 										<a href="javascript:void(0);"><span>Authentication</span><span class="menu-arrow"></span></a>
@@ -1474,7 +1458,8 @@
 										</ul>
 									</li>
 									<li>
-										<a href="signin.html"><span>Logout</span> </a>
+										<a href="{% url 'signin' %}"><span>Logout</span></a>
+
 									</li>
 								</ul>
 							</div>

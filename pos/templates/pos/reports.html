@@ -1,0 +1,178 @@
+{% extends 'pos/base.html' %}
+
+{% block content %}
+<div class="container my-4">
+    <h3 class="mb-4">Reports</h3>
+    <input type="text" class="form-control mb-3" placeholder="Search reports...">
+
+    <!-- Tabs navigation -->
+    <ul class="nav nav-tabs mb-3" id="reportTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="sales-tab" data-bs-toggle="tab" data-bs-target="#sales" type="button">Sales Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="best-seller-tab" data-bs-toggle="tab" data-bs-target="#best-seller" type="button">Best Seller</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="inventory-tab" data-bs-toggle="tab" data-bs-target="#inventory" type="button">Inventory Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="stock-history-tab" data-bs-toggle="tab" data-bs-target="#stock-history" type="button">Stock History</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="sold-stock-tab" data-bs-toggle="tab" data-bs-target="#sold-stock" type="button">Sold Stock</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="invoice-tab" data-bs-toggle="tab" data-bs-target="#invoice" type="button">Invoice Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="supplier-tab" data-bs-toggle="tab" data-bs-target="#supplier" type="button">Supplier Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="supplier-due-tab" data-bs-toggle="tab" data-bs-target="#supplier-due" type="button">Supplier Due</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customer" type="button">Customer Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="customer-due-tab" data-bs-toggle="tab" data-bs-target="#customer-due" type="button">Customer Due</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="product-tab" data-bs-toggle="tab" data-bs-target="#product" type="button">Product Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="product-expiry-tab" data-bs-toggle="tab" data-bs-target="#product-expiry" type="button">Product Expiry</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="product-quantity-tab" data-bs-toggle="tab" data-bs-target="#product-quantity" type="button">Quantity Alert</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="expense-tab" data-bs-toggle="tab" data-bs-target="#expense" type="button">Expense Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="income-tab" data-bs-toggle="tab" data-bs-target="#income" type="button">Income Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tax-tab" data-bs-toggle="tab" data-bs-target="#tax" type="button">Tax Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profit-loss-tab" data-bs-toggle="tab" data-bs-target="#profit-loss" type="button">Profit & Loss</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="annual-tab" data-bs-toggle="tab" data-bs-target="#annual" type="button">Annual Report</button>
+        </li>
+    </ul>
+
+    <!-- Tabs content -->
+    <div class="tab-content" id="reportTabsContent">
+        <!-- Example Sales Report -->
+        <div class="tab-pane fade show active" id="sales" role="tabpanel">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Invoice No</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Total Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INV001</td>
+                        <td>01 Sep 2025</td>
+                        <td>John Doe</td>
+                        <td>KSh 25,000</td>
+                        <td>Paid</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Best Seller -->
+        <div class="tab-pane fade" id="best-seller" role="tabpanel">
+            <p>Best Seller Report content goes here.</p>
+        </div>
+
+        <!-- Inventory -->
+        <div class="tab-pane fade" id="inventory" role="tabpanel">
+            <p>Inventory Report content goes here.</p>
+        </div>
+
+        <!-- Stock History -->
+        <div class="tab-pane fade" id="stock-history" role="tabpanel">
+            <p>Stock History Report content goes here.</p>
+        </div>
+
+        <!-- Sold Stock -->
+        <div class="tab-pane fade" id="sold-stock" role="tabpanel">
+            <p>Sold Stock Report content goes here.</p>
+        </div>
+
+        <!-- Invoice -->
+        <div class="tab-pane fade" id="invoice" role="tabpanel">
+            <p>Invoice Report content goes here.</p>
+        </div>
+
+        <!-- Supplier -->
+        <div class="tab-pane fade" id="supplier" role="tabpanel">
+            <p>Supplier Report content goes here.</p>
+        </div>
+
+        <!-- Supplier Due -->
+        <div class="tab-pane fade" id="supplier-due" role="tabpanel">
+            <p>Supplier Due Report content goes here.</p>
+        </div>
+
+        <!-- Customer -->
+        <div class="tab-pane fade" id="customer" role="tabpanel">
+            <p>Customer Report content goes here.</p>
+        </div>
+
+        <!-- Customer Due -->
+        <div class="tab-pane fade" id="customer-due" role="tabpanel">
+            <p>Customer Due Report content goes here.</p>
+        </div>
+
+        <!-- Product -->
+        <div class="tab-pane fade" id="product" role="tabpanel">
+            <p>Product Report content goes here.</p>
+        </div>
+
+        <!-- Product Expiry -->
+        <div class="tab-pane fade" id="product-expiry" role="tabpanel">
+            <p>Product Expiry Report content goes here.</p>
+        </div>
+
+        <!-- Product Quantity -->
+        <div class="tab-pane fade" id="product-quantity" role="tabpanel">
+            <p>Product Quantity Alert content goes here.</p>
+        </div>
+
+        <!-- Expense -->
+        <div class="tab-pane fade" id="expense" role="tabpanel">
+            <p>Expense Report content goes here.</p>
+        </div>
+
+        <!-- Income -->
+        <div class="tab-pane fade" id="income" role="tabpanel">
+            <p>Income Report content goes here.</p>
+        </div>
+
+        <!-- Tax -->
+        <div class="tab-pane fade" id="tax" role="tabpanel">
+            <p>Tax Report content goes here.</p>
+        </div>
+
+        <!-- Profit & Loss -->
+        <div class="tab-pane fade" id="profit-loss" role="tabpanel">
+            <p>Profit & Loss Report content goes here.</p>
+        </div>
+
+        <!-- Annual -->
+        <div class="tab-pane fade" id="annual" role="tabpanel">
+            <p>Annual Report content goes here.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

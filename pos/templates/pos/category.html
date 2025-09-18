@@ -2,314 +2,211 @@
 {% load static %}
 
 {% block content %}
-
 <div class="page-header">
-	<div class="add-item d-flex">
-		<div class="page-title">
-			<h4 class="fw-bold">Category</h4>
-			<h6>Manage your categories</h6>
-		</div>
-	</div>
-	<ul class="table-top-head">
-		<li>
-			<a data-bs-toggle="tooltip" data-bs-placement="top" title="Pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
-		</li>
-		<li>
-			<a data-bs-toggle="tooltip" data-bs-placement="top" title="Excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
-		</li>
-		<li>
-			<a data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"><i class="ti ti-refresh"></i></a>
-		</li>
-		<li>
-			<a data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse" id="collapse-header"><i class="ti ti-chevron-up"></i></a>
-		</li>
-	</ul>
-	<div class="page-btn">
-		<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-category"><i class="ti ti-circle-plus me-1"></i>Add Category</a>
-	</div>
+    <div class="add-item d-flex">
+        <div class="page-title">
+            <h4 class="fw-bold">Categories</h4>
+            <h6>Manage your categories</h6>
+        </div>
+        <div class="page-btn ms-auto">
+            <button type="button" class="btn btn-added" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                + Add Category
+            </button>
+        </div>
+    </div>
 </div>
-<!-- /product list -->
+
 <div class="card">
-	<div class="card-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-		<div class="search-set">
-			<div class="search-input">
-				<span class="btn-searchset"><i class="ti ti-search fs-14 feather-search"></i></span>
-			</div>
-		</div>
-		<div class="d-flex table-dropdown my-xl-auto right-content align-items-center flex-wrap row-gap-3">
-			<div class="dropdown">
-				<a href="javascript:void(0);" class="dropdown-toggle btn btn-white btn-md d-inline-flex align-items-center" data-bs-toggle="dropdown">
-					Status
-				</a>
-				<ul class="dropdown-menu  dropdown-menu-end p-3">
-					<li>
-						<a href="javascript:void(0);" class="dropdown-item rounded-1">Active</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);" class="dropdown-item rounded-1">Inactive</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	
-	<div class="card-body p-0">
-		<div class="table-responsive">
-			<table class="table datatable">
-				<thead class="thead-light">
-					<tr>
-						<th class="no-sort">
-							<label class="checkboxs">
-								<input type="checkbox" id="select-all">
-								<span class="checkmarks"></span>
-							</label>
-						</th>
-						<th>Category</th>
-						<th>Category slug</th>
-						<th>Created On</th>
-						<th>Status</th>
-						<th class="no-sort"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Computers</span></td>
-						<td>computers</td>
-						<td>24 Dec 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Electronics</span></td>
-						<td>electronics</td>
-						<td>10 Dec 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Shoe</span></td>
-						<td>shoe</td>
-						<td>27 Nov 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Cosmetics</span></td>
-						<td>cosmetics</td>
-						<td>18 Nov 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Groceries</span></td>
-						<td>groceries</td>
-						<td>06 Nov 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Furniture</span></td>
-						<td>furniture</td>
-						<td>25 Oct 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Bags</span></td>
-						<td>bags</td>
-						<td>14 Oct 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Phone</span></td>
-						<td>phone</td>
-						<td>03 Oct 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Appliances</span></td>
-						<td>appliances</td>
-						<td>20 Sep 2024</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-						</td>
-					</tr>	
-					<tr>
-						<td>
-							<label class="checkboxs">
-								<input type="checkbox">
-								<span class="checkmarks"></span>
-							</label>
-						</td>
-						<td><span class="text-gray-9">Clothing</span></td>
-						<td>clothing</td>
-						<td>10 Sep 20244</td>
-						<td><span class="badge bg-success fw-medium fs-10">Active</span></td>
-						<td class="action-table-data">
-							<div class="edit-delete-action">
-								<a class="me-2 p-2" href="#" data-bs-toggle="modal" data-bs-target="#edit-category">
-									<i data-feather="edit" class="feather-edit"></i>
-								</a>
-								<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="p-2" href="javascript:void(0);">
-									<i data-feather="trash-2" class="feather-trash-2"></i>
-								</a>
-							</div>
-						</td>
-					</tr>								
-				</tbody>
-			</table>
-		</div>
-	</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table datanew">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Slug</th>
+                        <th>Status</th>
+                        <th class="text-end">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTableBody">
+                    {% for category in categories %}
+                    <tr id="categoryRow{{ category.id }}">
+                        <td>{{ category.id }}</td>
+                        <td class="cat-name">{{ category.name }}</td>
+                        <td class="cat-slug">{{ category.slug }}</td>
+                        <td class="cat-status">{{ category.status }}</td>
+                        <td class="text-end">
+                            <a class="me-3 edit-btn" href="#" data-bs-toggle="modal" data-bs-target="#editCategoryModal{{ category.id }}">
+                                <i class="fa fa-edit text-primary"></i>
+                            </a>
+                            <a class="delete-btn" href="#" data-bs-toggle="modal" data-bs-target="#deleteCategoryModal{{ category.id }}">
+                                <i class="fa fa-trash text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- Edit Modal -->
+                    <div class="modal fade" id="editCategoryModal{{ category.id }}" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form class="edit-category-form" data-id="{{ category.id }}">
+                                    {% csrf_token %}
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Edit Category</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Name</label>
+                                            <input type="text" name="name" value="{{ category.name }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Slug</label>
+                                            <input type="text" name="slug" value="{{ category.slug }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Status</label>
+                                            <select name="status" class="form-control">
+                                                <option value="Active" {% if category.status == "Active" %}selected{% endif %}>Active</option>
+                                                <option value="Inactive" {% if category.status == "Inactive" %}selected{% endif %}>Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delete Modal -->
+                    <div class="modal fade" id="deleteCategoryModal{{ category.id }}" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <form class="delete-category-form" data-id="{{ category.id }}">
+                                    {% csrf_token %}
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Delete Category</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete <b>{{ category.name }}</b>?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addCategoryModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="addCategoryForm">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Slug</label>
+                        <input type="text" name="slug" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <select name="status" class="form-control">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Add Category</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+
+    // Add Category
+    $('#addCategoryForm').submit(function(e){
+        e.preventDefault();
+        let form = $(this);
+        $.ajax({
+            url: "{% url 'add_category' %}",
+            method: "POST",
+            data: form.serialize(),
+            success: function(data){
+                if(data.success){
+                    location.reload(); // reload to see new category
+                } else {
+                    alert(data.error);
+                }
+            }
+        });
+    });
+
+    // Edit Category
+    $('.edit-category-form').submit(function(e){
+        e.preventDefault();
+        let form = $(this);
+        let catId = form.data('id');
+        $.ajax({
+            url: `/pos/category/edit/${catId}/`,
+            method: "POST",
+            data: form.serialize(),
+            success: function(data){
+                if(data.success){
+                    location.reload(); // reload to see updated category
+                } else {
+                    alert(data.error);
+                }
+            }
+        });
+    });
+
+    // Delete Category
+    $('.delete-category-form').submit(function(e){
+        e.preventDefault();
+        let form = $(this);
+        let catId = form.data('id');
+        $.ajax({
+            url: `/pos/category/delete/${catId}/`,
+            method: "POST",
+            data: form.serialize(),
+            success: function(data){
+                if(data.success){
+                    $(`#categoryRow${catId}`).remove();
+                    $(`#deleteCategoryModal${catId}`).modal('hide');
+                } else {
+                    alert(data.error);
+                }
+            }
+        });
+    });
+
+});
+</script>
 {% endblock %}
-
-{% block extra_js_scripts %}
-
-		<!-- Datatable JS -->
-		<script src="{% static 'pos/assets/js/jquery.dataTables.min.js' %}"></script>
-		<script src="{% static 'pos/assets/js/dataTables.bootstrap5.min.js' %}"></script>
-
-{% endblock extra_js_scripts%}
